@@ -10,6 +10,10 @@
 
 **[⬇️ Download the latest APK](https://github.com/Umair-Habibx123/firestream/releases/latest)** · Android 7.0+ · enable "Install unknown apps" for your browser or file manager first.
 
+| Sign in | Chats | Chat | Group | Profile |
+| :---: | :---: | :---: | :---: | :---: |
+| <img src="docs/screenshots/login.jpg" width="160" alt="Sign-in screen with email, password and Continue with Google"> | <img src="docs/screenshots/chat-list.jpg" width="160" alt="Chat list with Chats and Groups tabs"> | <img src="docs/screenshots/chat-screen.jpg" width="160" alt="One-to-one chat with last-seen status and message input"> | <img src="docs/screenshots/group-screen.jpg" width="160" alt="Group chat with member count"> | <img src="docs/screenshots/profile.jpg" width="160" alt="Profile with username, password, dark mode, contacts and blocked users"> |
+
 ## Features
 
 **Accounts**

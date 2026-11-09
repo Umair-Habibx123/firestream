@@ -1,6 +1,4 @@
 import 'package:flutter/material.dart';
-import 'package:cloud_firestore/cloud_firestore.dart';
-import 'package:shared_preferences/shared_preferences.dart';
 
 class AddParticipantsSheet extends StatefulWidget {
   final List<Map<String, dynamic>> userList;
@@ -18,7 +16,6 @@ class AddParticipantsSheet extends StatefulWidget {
 
 class _AddParticipantsSheetState extends State<AddParticipantsSheet> {
   late List<Map<String, dynamic>> _userList;
-  String _currentUserEmail = '';
   bool _isLoading = true;
   String _searchQuery = '';
 
@@ -30,9 +27,7 @@ class _AddParticipantsSheetState extends State<AddParticipantsSheet> {
   }
 
   Future<void> _loadCurrentUserEmail() async {
-    final prefs = await SharedPreferences.getInstance();
     setState(() {
-      _currentUserEmail = prefs.getString('userEmail') ?? '';
       _isLoading = false;
     });
   }

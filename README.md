@@ -1,229 +1,112 @@
-# 🔥 FireStream Chat App
+# 🔥 FireStream
 
-### Real-time messaging powered by Flutter & Firebase
+**A real-time chat app for Android built with Flutter and Firebase: one-to-one and group chats with images, files and voice notes, admin-controlled groups, online status, and scheduled messages.**
 
-[![Flutter](https://img.shields.io/badge/Flutter-3.x-02569B?style=for-the-badge&logo=flutter&logoColor=white)](https://flutter.dev)
-[![Dart](https://img.shields.io/badge/Dart-3.x-0175C2?style=for-the-badge&logo=dart&logoColor=white)](https://dart.dev)
-[![Firebase](https://img.shields.io/badge/Firebase-FFCA28?style=for-the-badge&logo=firebase&logoColor=black)](https://firebase.google.com)
-[![Android](https://img.shields.io/badge/Android-API%2021+-3DDC84?style=for-the-badge&logo=android&logoColor=white)](https://android.com)
-[![License](https://img.shields.io/badge/License-MIT-yellow?style=for-the-badge)](LICENSE)
+[![CI](https://github.com/Umair-Habibx123/firestream/actions/workflows/ci.yml/badge.svg)](https://github.com/Umair-Habibx123/firestream/actions/workflows/ci.yml)
+[![Latest release](https://img.shields.io/github/v/release/Umair-Habibx123/firestream?label=APK)](https://github.com/Umair-Habibx123/firestream/releases/latest)
+[![Flutter](https://img.shields.io/badge/Flutter-3.47-02569B?logo=flutter&logoColor=white)](https://flutter.dev)
+[![Firebase](https://img.shields.io/badge/Firebase-Auth_·_Firestore_·_Storage-FFCA28?logo=firebase&logoColor=black)](https://firebase.google.com)
+[![License: MIT](https://img.shields.io/badge/license-MIT-blue)](LICENSE)
 
-[⬇️ Download APK](https://github.com/Umair-Habibx123/FireStream/releases/download/v1.1/FireStream.apk) • [🐛 Report Bug](https://github.com/Umair-Habibx123/FireStream/issues) • [✨ Request Feature](https://github.com/Umair-Habibx123/FireStream/issues)
+**[⬇️ Download the latest APK](https://github.com/Umair-Habibx123/firestream/releases/latest)** · Android 7.0+ · enable "Install unknown apps" for your browser or file manager first.
 
-</div>
+## Features
 
----
+**Accounts**
+- Sign in with email and password, or with Google
+- Reset a forgotten password by email, and set or change your password
+- Profile photo and details
 
-## 📖 About
+**Chats**
+- Real-time one-to-one and group messaging (Cloud Firestore)
+- Send images, files and **voice notes**, with full-screen image preview
+- Delete messages: your own, or any message if you're a group admin
+- **Scheduled messages:** write now, deliver later
+- **Online status and last seen**
 
-**FireStream** is a powerful, feature-rich Flutter chat application that simplifies real-time communication. It leverages Firebase for seamless authentication, messaging, and group management — offering a full-featured chat experience on Android.
+**Contacts**
+- Add contacts by their account email
+- Block contacts you don't want to hear from
 
----
+**Groups**
+- Create groups, add members one by one or from your contacts, and remove them
+- Admins: promote or demote admins, rename the group, change its photo, or delete it
+- **Admin-only messaging:** restrict who can send messages
 
-## ✨ Features
+**Also:** light and dark themes, and a no-internet notice.
 
-### 🔐 Authentication
-- Email/Password and Google Sign-In
-- Secure user registration and login
+## Install
 
-### 💬 Chats
-- Send and receive text messages in real time
-- Share images within chats
-- Delete messages — admins manage all, users manage their own
+1. Open the **[latest release](https://github.com/Umair-Habibx123/firestream/releases/latest)** and download `FireStream-vX.Y.Z.apk`.
+2. Optionally check it against the `.sha256` file next to it.
+3. Open the APK on your phone and allow installing from that app if Android asks.
 
-### 👥 Contacts Management
-- Add contacts via authenticated email addresses
-- Blocklist unwanted contacts for enhanced privacy
+v1.2.0 uses a new app ID (`com.umairhabib.firestream`), so uninstall v1.0 or v1.1 first.
 
-### 🏘️ Group Chats
-- Create groups and add/remove participants by email
-- Admin controls for permissions and group configuration
-- View group members and message individuals directly
-- Add single contacts or bulk contact lists to groups
+## Build it yourself
 
-### 🖼️ Media & Profile
-- Share images effortlessly in chats and groups
-- Update and manage your profile picture and info
+You need **Flutter 3.47+**, the Android SDK and your own Firebase project.
 
----
+1. **Create a Firebase project** at [console.firebase.google.com](https://console.firebase.google.com/) and enable:
+   - **Authentication** with the Email/Password and Google providers
+   - **Cloud Firestore** and **Storage**
+2. **Add an Android app** with package name `com.umairhabib.firestream`, and add your signing key's **SHA-1** and **SHA-256** fingerprints. Google Sign-In needs them; get yours with `cd android && ./gradlew signingReport`. Download `google-services.json` into `android/app/`.
+3. **Create `.env`** in the project root with your Firebase web, Android, iOS and Windows app values, which `lib/firebase_options.dart` reads. The variable names are the `FIREBASE_*` keys used in that file, for example:
+   ```env
+   FIREBASE_ANDROID_API_KEY=...
+   FIREBASE_ANDROID_APP_ID=...
+   FIREBASE_ANDROID_MESSAGING_SENDER_ID=...
+   FIREBASE_ANDROID_PROJECT_ID=...
+   FIREBASE_ANDROID_STORAGE_BUCKET=...
+   ```
+4. Run it:
+   ```bash
+   flutter pub get
+   flutter run                     # on a connected phone or emulator
+   flutter build apk --release     # APK in build/app/outputs/flutter-apk/
+   ```
 
-## 📲 Download
-
-| Platform | Download |
+| Command | What it does |
 |---|---|
-| Android (APK) | [⬇️ Download APK](https://github.com/Umair-Habibx123/FireStream/releases/download/v1.1/FireStream.apk) |
+| `flutter test` | Runs the tests (chat-list time labels) |
+| `flutter analyze` | Static analysis |
 
-> ℹ️ Enable **"Install from Unknown Sources"** in Android settings before installing.
+> **About security:** Firebase config values (API key, app ID, project ID) are public identifiers that ship in every app, so they aren't secrets. What protects the data is your **Firestore and Storage security rules**; set them so users can only read and write their own chats and the groups they belong to.
 
-All releases → [GitHub Releases](https://github.com/Umair-Habibx123/FireStream/releases)
+## How it's built
 
----
-
-## 🛠️ Built With
-
-- [Flutter](https://flutter.dev/) — Cross-platform UI framework
-- [Firebase Auth](https://firebase.google.com/products/auth) — Email & Google authentication
-- [Cloud Firestore](https://firebase.google.com/products/firestore) — Real-time database & messaging
-- [Firebase Storage](https://firebase.google.com/products/storage) — Image & media storage
-- [Google Sign-In](https://pub.dev/packages/google_sign_in) — OAuth via Google
-- [Image Picker](https://pub.dev/packages/image_picker) — Camera & gallery access
-
----
-
-## 🚀 Getting Started
-
-### Prerequisites
-
-- [Flutter SDK](https://flutter.dev/docs/get-started/install) (3.x or higher)
-- [Android Studio](https://developer.android.com/studio) or [VS Code](https://code.visualstudio.com/)
-- Android device or emulator (API 21+)
-- [Firebase Project](https://console.firebase.google.com/) (free)
-
-Check your Flutter setup:
-```bash
-flutter doctor
-```
-
----
-
-### Installation
-
-**1. Clone the repository**
-```bash
-git clone https://github.com/Umair-Habibx123/FireStream
-cd FireStream
-```
-
-**2. Install dependencies**
-```bash
-flutter pub get
-```
-
-**3. Set up Firebase**
-
-- Go to [Firebase Console](https://console.firebase.google.com/) and create a new project
-- Enable **Authentication** (Email/Password + Google)
-- Enable **Cloud Firestore**
-- Enable **Firebase Storage**
-- Download config files and place them:
-
-```
-android/app/google-services.json       ← Android config
-firebase.json                          ← root directory
-```
-
-**4. Run the app**
-```bash
-# Check connected devices
-flutter devices
-
-# Run on your device
-flutter run -d <device_id>
-```
-
----
-
-## 📁 Project Structure
-
-```
-FireStream/
-├── lib/
-│   ├── main.dart                      # App entry point
-│   ├── screens/
-│   │   ├── loginScreen.dart           # Login & registration
-│   │   ├── homeScreen.dart            # Chat list / home
-│   │   ├── chatScreen.dart            # One-on-one chat
-│   │   └── groupChatScreen.dart       # Group chat screen
-│   ├── widgets/                       # Reusable UI components
-│   ├── services/                      # Firebase & auth logic
-│   └── models/                        # Data models
-├── android/
-│   └── app/
-│       └── google-services.json       # Firebase Android config
-├── firebase.json                      # Firebase project config
-├── assets/                            # Images, fonts, etc.
-└── pubspec.yaml                       # Dependencies & metadata
-```
-
----
-
-## 📦 Build APK
-
-```bash
-# Debug build (for testing)
-flutter build apk --debug
-
-# Release build (for distribution)
-flutter build apk --release
-```
-
-Output:
-```
-build/app/outputs/flutter-apk/app-release.apk
-```
-
----
-
-## 📱 Usage Guide
-
-| Feature | How To |
+| Part | What it uses |
 |---|---|
-| **Sign In** | Login with email/password or tap Google Sign-In |
-| **New Chat** | Go to Contacts → tap a contact to start chatting |
-| **Send Image** | Tap the 📎 icon inside any chat |
-| **Create Group** | Groups tab → tap ➕ → add participants by email |
-| **Manage Group** | Open group → tap Group Info → admin controls |
-| **Block Contact** | Contacts → long press → Block |
-| **Edit Profile** | Tap your avatar → Edit Profile |
+| Backend | Firebase Authentication, Cloud Firestore, Firebase Storage |
+| Sign-in | `firebase_auth`, `google_sign_in` |
+| State | `provider` |
+| Media | `image_picker`, `file_picker`, `record`, `audioplayers`, `photo_view`, `dio` for downloads |
+| Device | `connectivity_plus`, `permission_handler`, `shared_preferences` |
 
----
+```
+lib/
+├── main.dart                 app setup and Firebase init
+├── firebase_options.dart     reads the Firebase config from .env
+└── features/
+    ├── authentication/       sign-in, password reset, profile, contacts and blocklist
+    ├── chat/screens/         chat list, one-to-one chat, group chat, group details and settings
+    ├── services/             presence, scheduled messages, voice recording, theme, connectivity
+    └── utils/                shared helpers (chat-list time labels)
+```
 
-## 🤝 Contributing
+Scheduled messages are delivered by the app itself, so the project stays on Firebase's free Spark plan, which doesn't include Cloud Functions. See `lib/features/services/scheduled_message_service.dart`.
 
-Contributions are welcome!
+## Releasing (for maintainers)
 
-1. Fork the repository
-2. Create a feature branch
+Pushing a version tag builds a signed APK in GitHub Actions and publishes it as a release:
+
 ```bash
-git checkout -b feature/AmazingFeature
+git tag v1.2.0
+git push origin v1.2.0
 ```
-3. Commit your changes
-```bash
-git commit -m "Add AmazingFeature"
-```
-4. Push to the branch
-```bash
-git push origin feature/AmazingFeature
-```
-5. Open a Pull Request
 
----
+The workflow needs these repository secrets: `GOOGLE_SERVICES_JSON_BASE64`, `DOTENV_BASE64`, `ANDROID_KEYSTORE_BASE64`, `ANDROID_KEYSTORE_PASSWORD`, `ANDROID_KEY_ALIAS` and `ANDROID_KEY_PASSWORD`. See [`.github/workflows/release.yml`](.github/workflows/release.yml).
 
-## 🐛 Issues
+## License
 
-Found a bug or have a suggestion? [Open an issue](https://github.com/Umair-Habibx123/FireStream/issues)
-
----
-
-## 📄 License
-
-This project is open-source under the **MIT License**. See the [LICENSE](LICENSE) file for details.
-
----
-
-## 🙏 Acknowledgments
-
-- [Firebase](https://firebase.google.com/) — For real-time backend infrastructure
-- [Flutter](https://flutter.dev/) — For the amazing cross-platform framework
-- Community contributors and supporters
-
----
-
-<div align="center">
-
-Made with ❤️ using Flutter & Firebase
-
-⭐ Star this repo if you found it helpful!
-
-</div>
-```
+[MIT](LICENSE) © 2025 [Umair Habib](https://github.com/Umair-Habibx123)

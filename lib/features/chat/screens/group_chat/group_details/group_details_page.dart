@@ -402,7 +402,6 @@ class _GroupDetailsPageState extends State<GroupDetailsPage> {
           final admins = List<String>.from(groupData['admins'] ?? []);
           final participants =
               List<String>.from(groupData['participants'] ?? []);
-          final isCurrentUserAdmin = admins.contains(currentUserEmail);
 
           final sortedParticipants = [
             if (participants.contains(currentUserEmail)) currentUserEmail!,

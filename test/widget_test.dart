@@ -1,30 +1,36 @@
-// This is a basic Flutter widget test.
-//
-// To perform an interaction with a widget in your test, use the WidgetTester
-// utility in the flutter_test package. For example, you can send tap and scroll
-// gestures. You can also use WidgetTester to find child widgets in the widget
-// tree, read text, and verify that the values of widget properties are correct.
-
-import 'package:flutter/material.dart';
 import 'package:flutter_test/flutter_test.dart';
 
-import 'package:chat_app/main.dart';
+import 'package:chat_app/features/utils/chat_time_format.dart';
 
 void main() {
-  testWidgets('Counter increments smoke test', (WidgetTester tester) async {
-    // Build our app and trigger a frame.
-    await tester.pumpWidget(const MyApp());
+  // A fixed "now": Wednesday 12 November 2025, 08:00.
+  final now = DateTime(2025, 11, 12, 8, 0);
 
-    // Verify that our counter starts at 0.
-    expect(find.text('0'), findsOneWidget);
-    expect(find.text('1'), findsNothing);
+  group('formatChatListTime', () {
+    test('empty for a missing time', () {
+      expect(formatChatListTime(null, now: now), '');
+    });
 
-    // Tap the '+' icon and trigger a frame.
-    await tester.tap(find.byIcon(Icons.add));
-    await tester.pump();
+    test('today shows the time with zero-padded minutes', () {
+      expect(formatChatListTime(DateTime(2025, 11, 12, 7, 5), now: now), '7:05');
+    });
 
-    // Verify that our counter has incremented.
-    expect(find.text('0'), findsNothing);
-    expect(find.text('1'), findsOneWidget);
+    test('yesterday late evening is "Yesterday", even if under 24 hours ago', () {
+      expect(formatChatListTime(DateTime(2025, 11, 11, 23, 0), now: now), 'Yesterday');
+    });
+
+    test('two evenings ago is a weekday, not "Yesterday"', () {
+      // Monday 10 Nov, 22:00: less than 48 hours ago, but two calendar days.
+      expect(formatChatListTime(DateTime(2025, 11, 10, 22, 0), now: now), 'Mon');
+    });
+
+    test('within the last week shows the weekday', () {
+      expect(formatChatListTime(DateTime(2025, 11, 7, 12, 0), now: now), 'Fri');
+    });
+
+    test('a week or more ago shows day/month', () {
+      expect(formatChatListTime(DateTime(2025, 11, 5, 12, 0), now: now), '5/11');
+      expect(formatChatListTime(DateTime(2024, 12, 31, 12, 0), now: now), '31/12');
+    });
   });
 }

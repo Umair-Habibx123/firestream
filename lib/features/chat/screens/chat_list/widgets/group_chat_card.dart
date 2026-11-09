@@ -1,3 +1,4 @@
+import 'package:chat_app/features/utils/chat_time_format.dart';
 import 'dart:async';
 
 import 'package:chat_app/features/chat/screens/group_chat/chat_screen/group_chat_screen.dart';
@@ -51,21 +52,8 @@ class _GroupChatCardState extends State<GroupChatCard> {
     });
   }
 
-  String _formatTimestamp(Timestamp? timestamp) {
-    if (timestamp == null) return '';
-    final dt = timestamp.toDate();
-    final now = DateTime.now();
-    if (dt.year == now.year && dt.month == now.month && dt.day == now.day) {
-      return '${dt.hour}:${dt.minute.toString().padLeft(2, '0')}';
-    }
-    final diff = now.difference(dt);
-    if (diff.inDays == 1) return 'Yesterday';
-    if (diff.inDays < 7) {
-      const days = ['Mon', 'Tue', 'Wed', 'Thu', 'Fri', 'Sat', 'Sun'];
-      return days[dt.weekday - 1];
-    }
-    return '${dt.day}/${dt.month}';
-  }
+  String _formatTimestamp(Timestamp? timestamp) =>
+      formatChatListTime(timestamp?.toDate());
 
   @override
   Widget build(BuildContext context) {

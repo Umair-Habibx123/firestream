@@ -64,6 +64,19 @@ jobs:
             echo "keyPassword=$KEY_PASSWORD"
           } > android/key.properties
 
+      # The release build (R8 + Firebase + many plugins) can exhaust the
+      # runner's memory with the project's 8 GB Gradle heap plus a separate
+      # Kotlin daemon. User-level settings override the project's, and also
+      # apply when rebuilding an older tag.
+      - name: Tune Gradle memory for CI
+        run: |
+          mkdir -p ~/.gradle
+          cat >> ~/.gradle/gradle.properties <<'EOF'
+          org.gradle.jvmargs=-Xmx6g -XX:MaxMetaspaceSize=1536m -XX:+UseParallelGC -XX:+HeapDumpOnOutOfMemoryError
+          kotlin.daemon.jvmargs=-Xmx2g
+          org.gradle.workers.max=2
+          EOF
+
       - run: flutter pub get
       - run: flutter test
 

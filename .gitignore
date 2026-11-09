@@ -51,7 +51,6 @@ build/
 **/android/local.properties
 **/android/captures/
 **/android/.cxx/
-**/android/gradle.properties
 **/android/key.properties
 **/android/key.jks
 **/android/.kotlin/

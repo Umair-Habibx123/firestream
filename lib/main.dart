@@ -1,9 +1,9 @@
-import 'package:chat_app/features/services/connectivity_service.dart';
-import 'package:chat_app/features/services/theme_service.dart';
-import 'package:chat_app/no_internet_modal.dart';
+import 'package:firestream/features/services/connectivity_service.dart';
+import 'package:firestream/features/services/theme_service.dart';
+import 'package:firestream/no_internet_modal.dart';
 import 'package:firebase_core/firebase_core.dart';
-import 'package:chat_app/firebase_options.dart';
-import 'package:chat_app/splash_screen.dart';
+import 'package:firestream/firebase_options.dart';
+import 'package:firestream/splash_screen.dart';
 import 'package:flutter_dotenv/flutter_dotenv.dart';
 import 'package:get/get_navigation/src/root/get_material_app.dart';
 import 'package:flutter/material.dart';
@@ -33,6 +33,7 @@ class MyApp extends StatelessWidget {
   Widget build(BuildContext context) {
     final theme = context.watch<ThemeService>();
     return GetMaterialApp(
+      title: 'FireStream',
       debugShowCheckedModeBanner: false,
       themeMode: theme.mode,
       theme: AppTheme.light,

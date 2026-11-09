@@ -1,8 +1,8 @@
-import 'package:chat_app/features/chat/screens/group_chat/chat_screen/widgets/group_chat_app_bar.dart';
-import 'package:chat_app/features/chat/screens/group_chat/chat_screen/widgets/group_image_preview_screen.dart';
-import 'package:chat_app/features/chat/screens/group_chat/chat_screen/widgets/group_message_bubble.dart';
-import 'package:chat_app/features/chat/screens/group_chat/chat_screen/widgets/group_message_input.dart';
-import 'package:chat_app/features/services/scheduled_message_service.dart';
+import 'package:firestream/features/chat/screens/group_chat/chat_screen/widgets/group_chat_app_bar.dart';
+import 'package:firestream/features/chat/screens/group_chat/chat_screen/widgets/group_image_preview_screen.dart';
+import 'package:firestream/features/chat/screens/group_chat/chat_screen/widgets/group_message_bubble.dart';
+import 'package:firestream/features/chat/screens/group_chat/chat_screen/widgets/group_message_input.dart';
+import 'package:firestream/features/services/scheduled_message_service.dart';
 import 'package:flutter/material.dart';
 import 'package:cloud_firestore/cloud_firestore.dart';
 import 'package:flutter/services.dart';

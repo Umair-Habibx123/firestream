@@ -1,5 +1,5 @@
-import 'package:chat_app/features/authentication/SignIn/signin_screen.dart';
-import 'package:chat_app/features/chat/screens/chat_list/chat_list_screen.dart';
+import 'package:firestream/features/authentication/SignIn/signin_screen.dart';
+import 'package:firestream/features/chat/screens/chat_list/chat_list_screen.dart';
 import 'package:flutter/material.dart';
 import 'package:flutter/services.dart';
 import 'package:flutter_spinkit/flutter_spinkit.dart';
@@ -178,7 +178,7 @@ class _SplashScreenState extends State<SplashScreen>
                   child: Column(
                     children: [
                       Text(
-                        'ChatApp',
+                        'FireStream',
                         style: GoogleFonts.poppins(
                           fontSize: 32,
                           fontWeight: FontWeight.w800,

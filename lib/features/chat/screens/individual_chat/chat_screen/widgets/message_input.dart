@@ -1,7 +1,7 @@
 import 'dart:async';
 import 'package:flutter/material.dart';
 import 'dart:io';
-import 'package:chat_app/features/services/audio_recorder_service.dart';
+import 'package:firestream/features/services/audio_recorder_service.dart';
 
 class MessageInput extends StatefulWidget {
   final TextEditingController messageController;

@@ -1,9 +1,9 @@
-import 'package:chat_app/features/chat/screens/chat_list/chat_list_screen.dart';
-import 'package:chat_app/features/chat/screens/group_chat/group_details/widgets/add_participants_sheet.dart';
-import 'package:chat_app/features/chat/screens/group_chat/group_details/widgets/group_details_app_bar.dart';
-import 'package:chat_app/features/chat/screens/group_chat/group_details/widgets/group_info_header.dart';
-import 'package:chat_app/features/chat/screens/group_chat/group_details/widgets/participant_list_item.dart';
-import 'package:chat_app/features/chat/screens/group_chat/group_details/widgets/participant_options_sheet.dart';
+import 'package:firestream/features/chat/screens/chat_list/chat_list_screen.dart';
+import 'package:firestream/features/chat/screens/group_chat/group_details/widgets/add_participants_sheet.dart';
+import 'package:firestream/features/chat/screens/group_chat/group_details/widgets/group_details_app_bar.dart';
+import 'package:firestream/features/chat/screens/group_chat/group_details/widgets/group_info_header.dart';
+import 'package:firestream/features/chat/screens/group_chat/group_details/widgets/participant_list_item.dart';
+import 'package:firestream/features/chat/screens/group_chat/group_details/widgets/participant_options_sheet.dart';
 import 'package:cloud_firestore/cloud_firestore.dart';
 import 'package:flutter/material.dart';
 import 'package:shared_preferences/shared_preferences.dart';

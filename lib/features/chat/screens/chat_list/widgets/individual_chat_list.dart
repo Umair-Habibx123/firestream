@@ -1,4 +1,4 @@
-import 'package:chat_app/features/chat/screens/individual_chat/add_chat/addchatScreen.dart';
+import 'package:firestream/features/chat/screens/individual_chat/add_chat/addchatScreen.dart';
 import 'package:cloud_firestore/cloud_firestore.dart';
 import 'package:flutter/material.dart';
 import 'chat_card.dart';

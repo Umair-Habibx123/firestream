@@ -1,4 +1,4 @@
-import 'package:chat_app/features/chat/screens/group_chat/group_details/group_details_page.dart';
+import 'package:firestream/features/chat/screens/group_chat/group_details/group_details_page.dart';
 import 'package:cloud_firestore/cloud_firestore.dart';
 import 'package:flutter/material.dart';
 

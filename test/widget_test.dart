@@ -1,6 +1,6 @@
 import 'package:flutter_test/flutter_test.dart';
 
-import 'package:chat_app/features/utils/chat_time_format.dart';
+import 'package:firestream/features/utils/chat_time_format.dart';
 
 void main() {
   // A fixed "now": Wednesday 12 November 2025, 08:00.

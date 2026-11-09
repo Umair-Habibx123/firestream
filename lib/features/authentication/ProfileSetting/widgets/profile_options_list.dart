@@ -1,6 +1,6 @@
 import 'package:flutter/material.dart';
 import 'package:provider/provider.dart';
-import 'package:chat_app/features/services/theme_service.dart';
+import 'package:firestream/features/services/theme_service.dart';
 
 class ProfileOptionsList extends StatelessWidget {
   final TextEditingController usernameController;

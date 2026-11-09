@@ -1,6 +1,6 @@
-import 'package:chat_app/features/utils/chat_time_format.dart';
+import 'package:firestream/features/utils/chat_time_format.dart';
 import 'dart:async';
-import 'package:chat_app/features/chat/screens/individual_chat/chat_screen/chat_screen.dart';
+import 'package:firestream/features/chat/screens/individual_chat/chat_screen/chat_screen.dart';
 import 'package:cloud_firestore/cloud_firestore.dart';
 import 'package:firebase_storage/firebase_storage.dart';
 import 'package:flutter/material.dart';

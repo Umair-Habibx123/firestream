@@ -1,13 +1,13 @@
-import 'package:chat_app/features/authentication/ProfileSetting/ProfileScreen.dart';
-import 'package:chat_app/features/chat/screens/group_chat/create_chat/addGroupChatScreen.dart';
-import 'package:chat_app/features/chat/screens/individual_chat/add_chat/addchatScreen.dart';
+import 'package:firestream/features/authentication/ProfileSetting/ProfileScreen.dart';
+import 'package:firestream/features/chat/screens/group_chat/create_chat/addGroupChatScreen.dart';
+import 'package:firestream/features/chat/screens/individual_chat/add_chat/addchatScreen.dart';
 import 'package:flutter/material.dart';
 import 'package:provider/provider.dart';
 import 'package:shared_preferences/shared_preferences.dart';
-import 'package:chat_app/features/services/presence_service.dart';
-import 'package:chat_app/features/services/theme_service.dart';
-import 'package:chat_app/features/services/scheduled_message_service.dart';
-import 'package:chat_app/features/chat/screens/scheduled/scheduled_messages_screen.dart';
+import 'package:firestream/features/services/presence_service.dart';
+import 'package:firestream/features/services/theme_service.dart';
+import 'package:firestream/features/services/scheduled_message_service.dart';
+import 'package:firestream/features/chat/screens/scheduled/scheduled_messages_screen.dart';
 import 'widgets/individual_chat_list.dart';
 import 'widgets/group_chat_list.dart';
 

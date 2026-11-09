@@ -1,7 +1,7 @@
-import 'package:chat_app/features/chat/screens/chat_list/chat_list_screen.dart';
+import 'package:firestream/features/chat/screens/chat_list/chat_list_screen.dart';
 import 'package:cloud_firestore/cloud_firestore.dart';
-import 'package:chat_app/features/authentication/Others/SetPasswordScreen.dart';
-import 'package:chat_app/features/authentication/Others/reset_password_screen.dart';
+import 'package:firestream/features/authentication/Others/SetPasswordScreen.dart';
+import 'package:firestream/features/authentication/Others/reset_password_screen.dart';
 import 'package:flutter/material.dart';
 import 'package:firebase_auth/firebase_auth.dart';
 import 'package:flutter_dotenv/flutter_dotenv.dart';

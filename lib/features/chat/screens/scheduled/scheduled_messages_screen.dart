@@ -1,7 +1,7 @@
 import 'package:flutter/material.dart';
 import 'package:cloud_firestore/cloud_firestore.dart';
 import 'package:intl/intl.dart';
-import 'package:chat_app/features/services/scheduled_message_service.dart';
+import 'package:firestream/features/services/scheduled_message_service.dart';
 
 /// Lists every message the user has scheduled, with its delivery status
 /// (Pending / Delivered / Failed) and the ability to cancel a pending one.

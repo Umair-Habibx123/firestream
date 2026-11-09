@@ -1,6 +1,6 @@
-import 'package:chat_app/features/chat/screens/group_chat/chat_screen/widgets/group_image_bubble.dart';
-import 'package:chat_app/features/chat/widgets/voice_note_player.dart';
-import 'package:chat_app/features/chat/widgets/file_bubble.dart';
+import 'package:firestream/features/chat/screens/group_chat/chat_screen/widgets/group_image_bubble.dart';
+import 'package:firestream/features/chat/widgets/voice_note_player.dart';
+import 'package:firestream/features/chat/widgets/file_bubble.dart';
 import 'package:flutter/material.dart';
 import 'package:cloud_firestore/cloud_firestore.dart';
 

@@ -1,4 +1,4 @@
-import 'package:chat_app/features/chat/screens/chat_list/chat_list_screen.dart';
+import 'package:firestream/features/chat/screens/chat_list/chat_list_screen.dart';
 import 'package:flutter/material.dart';
 import 'package:cloud_firestore/cloud_firestore.dart';
 import 'package:shared_preferences/shared_preferences.dart';

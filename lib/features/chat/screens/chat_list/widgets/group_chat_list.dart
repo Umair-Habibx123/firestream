@@ -1,4 +1,4 @@
-import 'package:chat_app/features/chat/screens/group_chat/create_chat/addGroupChatScreen.dart';
+import 'package:firestream/features/chat/screens/group_chat/create_chat/addGroupChatScreen.dart';
 import 'package:cloud_firestore/cloud_firestore.dart';
 import 'package:flutter/material.dart';
 import 'group_chat_card.dart';

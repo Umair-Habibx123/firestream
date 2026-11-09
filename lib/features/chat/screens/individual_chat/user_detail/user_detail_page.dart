@@ -1,6 +1,6 @@
 import 'package:flutter/material.dart';
 import 'package:cloud_firestore/cloud_firestore.dart';
-import 'package:chat_app/features/chat/screens/chat_list/chat_list_screen.dart';
+import 'package:firestream/features/chat/screens/chat_list/chat_list_screen.dart';
 import 'widgets/user_info_card.dart';
 import 'widgets/action_buttons.dart';
 import 'widgets/group_selection_dialog.dart';
